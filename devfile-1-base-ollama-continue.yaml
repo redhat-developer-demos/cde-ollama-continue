@@ -22,4 +22,8 @@ components:
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
-    # sourceMapping: /.ollama
+    env:
+      - name: OLLAMA_MODELS
+        value: ~/.ollama
+    #sourceMapping: /.ollama
+
