@@ -25,11 +25,20 @@ components:
     image: docker.io/ollama/ollama:latest
     mountSources: true
     sourceMapping: /.ollama
+- name: udi
+  container:
+    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
+    memoryRequest: 2Gi
+    cpuLimit: 4000m
+    cpuRequest: 1000m
+    mountSources: true
+    sourceMapping: /projects
 commands:
   - id: initprojectfolder
     exec:
       component: ollama
       commandLine: "mkdir /.ollama && touch /.ollama/test"
 events:
-  preStart:
+  postStart:
     - initprojectfolder
