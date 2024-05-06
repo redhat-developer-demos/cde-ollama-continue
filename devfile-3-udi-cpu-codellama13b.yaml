@@ -1,8 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
   name: ollama-continue-udi-cpu-codellama13b
-attributes:
-  controller.devfile.io/storage-type: ephemeral # TODO Remove this?!
 parent:
     uri: https://raw.githubusercontent.com/manhah/devspaces-ollama-continue/feature/base/devfile-1-base-ollama-continue.yaml # TODO Adapt this to the proper one
 components:
