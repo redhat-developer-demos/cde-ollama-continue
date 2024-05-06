@@ -26,10 +26,10 @@ components:
     mountSources: true
     sourceMapping: /.ollama
 commands:
-  - id: initProjectFolder
+  - id: initprojectfolder
     exec:
       component: ollama
       commandLine: "mkdir /.ollama && touch /.ollama/test"
 events:
   postStart:
-    - initProjectFolder
+    - initprojectfolder
