@@ -1,0 +1,11 @@
+{
+  "models": [
+    {
+      "title": "On-prem CodeLlama-13b",
+      "model": "codellama:13b",
+      "apiBase": "http://localhost:11434",
+      "provider": "ollama"
+      }    
+  ],
+  "allowAnonymousTelemetry": false
+}
