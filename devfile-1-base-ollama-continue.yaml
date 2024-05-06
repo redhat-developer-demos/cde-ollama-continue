@@ -37,8 +37,8 @@ components:
 commands:
   - id: initprojectfolder
     exec:
-      component: ollama
-      commandLine: "mkdir /.ollama && touch /.ollama/test"
+      component: udi
+      commandLine: "mkdir /projects && touch /projects/test"
 events:
   postStart:
     - initprojectfolder
