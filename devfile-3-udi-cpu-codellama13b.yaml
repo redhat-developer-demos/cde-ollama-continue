@@ -18,6 +18,6 @@ commands:
     exec:
       component: ollama
       commandLine: "ollama pull codellama:13b"
-events:
-  postStart:
-    - pullmodel
+# events:
+#   postStart:
+#     - pullmodel
