@@ -34,11 +34,3 @@ components:
     image: docker.io/ollama/ollama:latest
     mountSources: true
     sourceMapping: /.ollama
-commands:
-  - id: initprojectfolder
-    exec:
-      component: udi
-      commandLine: "mkdir /projects && touch /projects/test"
-events:
-  postStart:
-    - initprojectfolder
