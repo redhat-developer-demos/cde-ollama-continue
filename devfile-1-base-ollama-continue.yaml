@@ -11,15 +11,6 @@ projects:
       checkoutFrom:
         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
 components:
-- name: udi
-  container:
-    image: quay.io/devfile/universal-developer-image:ubi8-latest
-    memoryLimit: 4Gi
-    memoryRequest: 2Gi
-    cpuLimit: 4000m
-    cpuRequest: 1000m
-    mountSources: true
-    sourceMapping: /projects
 - name: ollama
   attributes:
     container-overrides:
@@ -32,5 +23,3 @@ components:
           memory: 8Gi
   container:
     image: docker.io/ollama/ollama:latest
-    mountSources: true
-    sourceMapping: /.ollama
