@@ -24,6 +24,9 @@ components:
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
-    sourceMapping: /.ollama
+    sourceMapping: /projects
+    env:
+      - name: OLLAMA_MODELS
+        value: /projects
     command: ['tail']
     args: ['-f', '/dev/null']
