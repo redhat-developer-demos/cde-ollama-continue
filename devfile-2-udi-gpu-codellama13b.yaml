@@ -1,0 +1,34 @@
+schemaVersion: 2.2.0
+metadata:
+  name: ollama-continue-udi-gpu-codellama13b
+parent:
+    uri: https://raw.githubusercontent.com/manhah/devspaces-ollama-continue/feature/base/devfile-1-base-ollama-continue.yaml # TODO Adapt this to the proper one
+components:
+- name: udi
+  container:
+    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
+    memoryRequest: 2Gi
+    cpuLimit: 4000m
+    cpuRequest: 1000m
+    mountSources: true
+    sourceMapping: /projects
+  attributes: 
+  # Those attributes are basically needed for scheduling the ollama 
+  # container coming from the parent devfile, along with udi in the same 
+  # pod, on to a GPU node. This is a hack but works perfectly fine,
+  # since the pod including all containers is scheduled on a node.
+    container-overrides:
+      resources:
+        limits:
+          nvidia.com/gpu: 1 # limiting to 1 GPU
+        requests:
+          nvidia.com/gpu: 1 # requesting 1 GPU
+commands:
+  - id: pullmodel
+    exec:
+      component: ollama
+      commandLine: "ollama pull codellama:13b"
+events:
+  postStart:
+    - pullmodel

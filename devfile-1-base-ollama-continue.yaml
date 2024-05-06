@@ -1,25 +1,16 @@
 schemaVersion: 2.2.0
 metadata:
-  name: udi-ollama-continue
+  name: ollama-continue
 attributes:
   controller.devfile.io/storage-type: ephemeral # TODO Remove this?!
 projects:
-  - name: udi-ollama-continue
+  - name: devspaces-ollama-continue
     git:
       remotes:
         origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
       checkoutFrom:
         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
 components:
-- name: udi
-  container:
-    image: quay.io/devfile/universal-developer-image:ubi8-latest
-    memoryLimit: 4Gi
-    memoryRequest: 2Gi
-    cpuLimit: 4000m
-    cpuRequest: 1000m
-    mountSources: true
-    sourceMapping: /projects
 - name: ollama
   attributes:
     container-overrides:
@@ -27,20 +18,10 @@ components:
         limits:
           cpu: 4000m
           memory: 16Gi
-          nvidia.com/gpu: 1 # limiting to 1 GPU
         requests:
           cpu: 1000m
           memory: 8Gi
-          nvidia.com/gpu: 1 # requesting 1 GPU
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
     sourceMapping: /.ollama
-commands:
-  - id: pullmodel
-    exec:
-      component: ollama
-      commandLine: "ollama pull codellama:13b"
-events:
-  postStart:
-    - pullmodel
