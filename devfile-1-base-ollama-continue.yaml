@@ -27,8 +27,6 @@ components:
     sourceMapping: /projects/ollama
     env:
       - name: OLLAMA_MODELS
-        value: /projects/ollama
+        value: /projects/ollama_models
       - name: HOME
-        value: /projects/ollama
-    command: ['tail']
-    args: ['-f', '/dev/null']
+        value: /projects
