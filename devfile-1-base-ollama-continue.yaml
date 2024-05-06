@@ -23,3 +23,13 @@ components:
           memory: 8Gi
   container:
     image: docker.io/ollama/ollama:latest
+    mountSources: true
+    sourceMapping: /.ollama
+commands:
+  - id: initProjectFolder
+    exec:
+      component: ollama
+      commandLine: "mkdir /.ollama && touch /.ollama/test"
+events:
+  postStart:
+    - initProjectFolder
