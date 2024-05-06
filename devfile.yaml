@@ -1,8 +1,15 @@
 schemaVersion: 2.2.0
 metadata:
-  name: udi-ollama
+  name: udi-ollama-continue
 attributes:
-  controller.devfile.io/storage-type: ephemeral
+  controller.devfile.io/storage-type: ephemeral # TODO Remove this?!
+projects:
+  - name: udi-ollama-continue
+    git:
+      remotes:
+        origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
+      checkoutFrom:
+        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
 components:
 - name: udi
   container:
@@ -37,7 +44,7 @@ commands:
   - id: copyconfig
     exec:
       component: udi
-      commandLine: "mkdir /home/user/.continue && cp /projects/devspaces-ollama-continue/continue-config.json /home/user/.continue/config.json"
+      commandLine: "mkdir /home/user/.continue && cp /projects/udi-ollama-continue/continue-config.json /home/user/.continue/config.json"
 events:
   postStart:
     - pullmodel
