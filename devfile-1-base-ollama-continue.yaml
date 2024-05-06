@@ -1,8 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
   name: ollama-continue
-attributes:
-  controller.devfile.io/storage-type: ephemeral # TODO Remove this?!
 projects:
   - name: devspaces-ollama-continue
     git:
