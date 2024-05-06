@@ -31,5 +31,5 @@ commands:
       component: ollama
       commandLine: "mkdir /.ollama && touch /.ollama/test"
 events:
-  postStart:
+  preStart:
     - initprojectfolder
