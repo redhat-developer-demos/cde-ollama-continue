@@ -22,4 +22,4 @@ components:
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
-    sourceMapping: /.ollama
+    # sourceMapping: /.ollama
