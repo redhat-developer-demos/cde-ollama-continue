@@ -3,10 +3,11 @@ schemaVersion: 2.2.0
 #   name: base-stack
 #   version: 1.0.0
 starterProjects:
-- name: devspaces-ollama-continue
-  git:
-    remotes:
-      origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
+  - name: devspaces-ollama-continue
+    git:
+      remotes:
+        origin: https://github.com/manhah/devspaces-ollama-continue.git # TODO Adapt this to the final repo when done
       checkoutFrom:
-        revision: 'feature/base'
-  subDir: base-stack
+        remote: origin
+        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
+    subDir: base-stack
