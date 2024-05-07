@@ -8,10 +8,6 @@ commands:
     exec:
       component: ollama
       commandLine: "ollama pull codellama:13b"
-  - id: copyconfig
-    exec:
-      component: udi
-      commandLine: "cp /projects/devspaces-ollama-continue/sample-1-codellama13b-gpu/.continuerc.json /home/user/.continue/config.json"
 events:
   postStart:
     - pullmodel
