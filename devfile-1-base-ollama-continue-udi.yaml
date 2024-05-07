@@ -33,9 +33,4 @@ components:
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
-    sourceMapping: /projects/ollama
-    env:
-      - name: OLLAMA_MODELS
-        value: /projects/ollama_models
-      - name: HOME
-        value: /projects
+    sourceMapping: /.ollama
