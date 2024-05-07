@@ -26,10 +26,12 @@ components:
       resources:
         limits:
           cpu: 4000m
-          memory: 16Gi
+          memory: 12Gi
+          # nvidia.com/gpu: 1 # Uncomment this if the pod shall be scheduled only on a GPU node
         requests:
           cpu: 1000m
           memory: 8Gi
+          # nvidia.com/gpu: 1 # Uncomment this if the pod shall be scheduled only on a GPU node
   container:
     image: docker.io/ollama/ollama:latest
     mountSources: true
