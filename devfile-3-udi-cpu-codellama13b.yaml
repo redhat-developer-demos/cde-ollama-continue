@@ -2,22 +2,12 @@ schemaVersion: 2.2.0
 metadata:
   name: ollama-continue-udi-cpu-codellama13b
 parent:
-    uri: https://raw.githubusercontent.com/manhah/devspaces-ollama-continue/feature/base/devfile-1-base-ollama-continue.yaml # TODO Adapt this to the proper one
-components:
-- name: udi
-  container:
-    image: quay.io/devfile/universal-developer-image:ubi8-latest
-    memoryLimit: 4Gi
-    memoryRequest: 2Gi
-    cpuLimit: 4000m
-    cpuRequest: 1000m
-    mountSources: true
-    sourceMapping: /projects
+    uri: https://raw.githubusercontent.com/manhah/devspaces-ollama-continue/feature/base/devfile-1-base-ollama-continue-udi.yaml # TODO Adapt this to the proper one
 commands:
   - id: pullmodel
     exec:
       component: ollama
       commandLine: "ollama pull codellama:13b"
-# events:
-#   postStart:
-#     - pullmodel
+events:
+  postStart:
+    - pullmodel
