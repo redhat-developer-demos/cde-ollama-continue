@@ -1,7 +1,8 @@
 schemaVersion: 2.2.0
-# metadata:
-#   name: base-stack
-#   version: 1.0.0
+metadata:
+  name: ollama-continue-udi
+attributes:
+  controller.devfile.io/storage-type: ephemeral # TODO try to remove this next
 starterProjects:
   - name: devspaces-ollama-continue
     git:
@@ -11,3 +12,27 @@ starterProjects:
         remote: origin
         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
     subDir: base-stack
+components:
+- name: udi
+  container:
+    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
+    memoryRequest: 2Gi
+    cpuLimit: 4000m
+    cpuRequest: 1000m
+    mountSources: true
+    sourceMapping: /projects
+- name: ollama
+  attributes:
+    container-overrides:
+      resources:
+        limits:
+          cpu: 4000m
+          memory: 16Gi
+        requests:
+          cpu: 1000m
+          memory: 8Gi
+  container:
+    image: docker.io/ollama/ollama:latest
+    mountSources: true
+    sourceMapping: /.ollama
