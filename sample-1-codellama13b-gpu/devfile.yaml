@@ -1,0 +1,9 @@
+schemaVersion: 2.2.0
+commands:
+  - id: pullmodel
+    exec:
+      component: ollama
+      commandLine: "ollama pull codellama:13b"
+events:
+  postStart:
+    - pullmodel
