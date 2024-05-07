@@ -9,4 +9,4 @@ starterProjects:
       origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
       checkoutFrom:
         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
-    subDir: base-stack
+  subDir: base-stack
