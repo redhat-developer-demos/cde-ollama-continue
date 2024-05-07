@@ -3,13 +3,13 @@ metadata:
   name: ollama-continue-udi
 attributes:
   controller.devfile.io/storage-type: ephemeral # TODO try to remove this next
-# projects:
-#   - name: devspaces-ollama-continue
-#     git:
-#       remotes:
-#         origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
-#       checkoutFrom:
-#         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
+projects:
+  - name: devspaces-ollama-continue
+    git:
+      remotes:
+        origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
+      checkoutFrom:
+        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
 components:
 - name: udi
   container:
