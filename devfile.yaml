@@ -12,14 +12,14 @@ starterProjects:
         remote: origin
         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
     subDir: sample-1-codellama13b-gpu
-  - name: ollama-continue-udi
-    git:
-      remotes:
-        origin: https://github.com/manhah/devspaces-ollama-continue.git # TODO Adapt this to the final repo when done
-      checkoutFrom:
-        remote: origin
-        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
-    subDir: base-stack
+  # - name: ollama-continue-udi
+  #   git:
+  #     remotes:
+  #       origin: https://github.com/manhah/devspaces-ollama-continue.git # TODO Adapt this to the final repo when done
+  #     checkoutFrom:
+  #       remote: origin
+  #       revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
+  #   subDir: base-stack
 components:
 - name: udi
   container:
