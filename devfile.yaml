@@ -3,23 +3,13 @@ metadata:
   name: ollama-continue-udi
 attributes:
   controller.devfile.io/storage-type: ephemeral # TODO try to remove this next
-starterProjects:
-  - name: ollama-continue-udi-codellama13b-gpu
-    git:
-      remotes:
-        origin: https://github.com/manhah/devspaces-ollama-continue.git # TODO Adapt this to the final repo when done
-      checkoutFrom:
-        remote: origin
-        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
-    subDir: sample-1-codellama13b-gpu
-  - name: ollama-continue-udi
-    git:
-      remotes:
-        origin: https://github.com/manhah/devspaces-ollama-continue.git # TODO Adapt this to the final repo when done
-      checkoutFrom:
-        remote: origin
-        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
-    subDir: base-stack
+# projects:
+#   - name: devspaces-ollama-continue
+#     git:
+#       remotes:
+#         origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
+#       checkoutFrom:
+#         revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
 components:
 - name: udi
   container:
@@ -44,3 +34,11 @@ components:
     image: docker.io/ollama/ollama:latest
     mountSources: true
     sourceMapping: /.ollama
+commands:
+  - id: pullmodel
+    exec:
+      component: ollama
+      commandLine: "ollama pull codellama:13b"
+events:
+  postStart:
+    - pullmodel
