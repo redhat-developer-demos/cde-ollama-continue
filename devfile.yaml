@@ -1,15 +1,8 @@
-schemaVersion: 2.2.0
+schemaVersion: 2.2.2
 metadata:
-  name: ollama-continue-udi
+  generateName: cde-ollama-continue
 attributes:
   controller.devfile.io/storage-type: ephemeral
-projects:
-  - name: cde-ollama-continue
-    git:
-      remotes:
-        origin: 'https://github.com/redhat-developer-demos/cde-ollama-continue'
-      checkoutFrom:
-        revision: main
 components:
 - name: udi
   container:
