@@ -1,0 +1,56 @@
+schemaVersion: 2.2.0
+metadata:
+  name: ollama-continue-udi
+attributes:
+  controller.devfile.io/storage-type: ephemeral
+projects:
+  - name: devspaces-ollama-continue
+    git:
+      remotes:
+        origin: 'https://github.com/redhat-developer-demos/devspaces-ollama-continue'
+      checkoutFrom:
+        revision: main
+components:
+- name: udi
+  container:
+    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
+    memoryRequest: 2Gi
+    cpuLimit: 4000m
+    cpuRequest: 1000m
+    mountSources: true
+    sourceMapping: /projects
+- name: ollama
+  attributes:
+    container-overrides:
+      resources:
+        limits:
+          cpu: 4000m
+          memory: 12Gi
+          # nvidia.com/gpu: 1 # Uncomment this if the pod shall be scheduled only on a GPU node
+        requests:
+          cpu: 1000m
+          memory: 8Gi
+          # nvidia.com/gpu: 1 # Uncomment this if the pod shall be scheduled only on a GPU node
+  container:
+    image: docker.io/ollama/ollama:latest
+    mountSources: true
+    sourceMapping: /.ollama
+commands:
+  - id: pullmodel
+    exec:
+      component: ollama
+      commandLine: "ollama pull llama3:8b"
+  - id: pullautocompletemodel
+    exec:
+      component: ollama
+      commandLine: "ollama pull starcoder2:3b"
+  - id: copyconfig
+    exec:
+      component: udi
+      commandLine: "mkdir /home/user/.continue && cp /projects/devspaces-ollama-continue/continue-config.json /home/user/.continue/config.json"
+events:
+  postStart:
+    - pullmodel
+    - pullautocompletemodel
+    - copyconfig
