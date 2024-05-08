@@ -4,7 +4,7 @@ metadata:
 attributes:
   controller.devfile.io/storage-type: ephemeral
 projects:
- - name: cde-ollama-continue
+  - name: cde-ollama-continue
     git:
       remotes:
         origin: 'https://github.com/redhat-developer-demos/cde-ollama-continue'
