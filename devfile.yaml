@@ -4,10 +4,10 @@ metadata:
 attributes:
   controller.devfile.io/storage-type: ephemeral
 projects:
-  - name: devspaces-ollama-continue
+  - name: cde-ollama-continue
     git:
       remotes:
-        origin: 'https://github.com/redhat-developer-demos/devspaces-ollama-continue'
+        origin: 'https://github.com/redhat-developer-demos/cde-ollama-continue'
       checkoutFrom:
         revision: main
 components:
@@ -48,7 +48,7 @@ commands:
   - id: copyconfig
     exec:
       component: udi
-      commandLine: "mkdir /home/user/.continue && cp /projects/devspaces-ollama-continue/continue-config.json /home/user/.continue/config.json"
+      commandLine: "mkdir /home/user/.continue && cp /projects/cde-ollama-continue/continue-config.json /home/user/.continue/config.json"
 events:
   postStart:
     - pullmodel
