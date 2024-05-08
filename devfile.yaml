@@ -7,9 +7,9 @@ projects:
   - name: devspaces-ollama-continue
     git:
       remotes:
-        origin: 'https://github.com/manhah/devspaces-ollama-continue.git' # TODO Adapt this to the final repo when done
+        origin: 'https://github.com/redhat-developer-demos/devspaces-ollama-continue'
       checkoutFrom:
-        revision: feature/base # TODO Adapt this to a dedicated version (or main) when done
+        revision: main
 components:
 - name: udi
   container:
