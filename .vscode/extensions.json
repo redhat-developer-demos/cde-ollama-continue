@@ -1,3 +1,6 @@
 {
-  "recommendations": ["Continue.continue"]
+  "recommendations": [
+    "Continue.continue",
+    "ms-python.python"
+  ]
 }
