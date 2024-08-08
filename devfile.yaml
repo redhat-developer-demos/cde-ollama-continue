@@ -40,7 +40,7 @@ commands:
   - id: pullmodel
     exec:
       component: ollama
-      commandLine: "ollama pull llama3:8b"
+      commandLine: "ollama pull granite-code:8b"
   - id: pullautocompletemodel
     exec:
       component: ollama
