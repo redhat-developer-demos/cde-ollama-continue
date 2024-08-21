@@ -34,10 +34,6 @@ commands:
     exec:
       component: ollama
       commandLine: "ollama pull granite-code:8b"
-  - id: pullautocompletemodel
-    exec:
-      component: ollama
-      commandLine: "ollama pull starcoder2:3b"
   - id: copyconfig
     exec:
       component: udi
@@ -45,5 +41,4 @@ commands:
 events:
   postStart:
     - pullmodel
-    - pullautocompletemodel
     - copyconfig
