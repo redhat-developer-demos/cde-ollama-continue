@@ -8,8 +8,8 @@
         }    
       ],
     "tabAutocompleteModel": {
-      "title": "Starcoder2 3b",
-      "model": "starcoder2:3b",
+      "title": "On-prem Granite-code-8b",
+      "model": "granite-code:8b",
       "provider": "ollama"
     },
     "allowAnonymousTelemetry": false
