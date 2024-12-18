@@ -1,11 +1,19 @@
 {
     "models": [
-      {
-        "title": "On-prem Granite-code-8b",
-        "model": "granite-code:8b",
-        "apiBase": "http://localhost:11434",
-        "provider": "ollama"
-        }    
+        {
+          "title": "Granite-8B-Instruct",
+          "provider": "rhoai",
+          "model": "granite-3-8b-instruct",
+          "apiBase": "https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com:443/v1",
+          "apiKey": "******",
+          "completionOptions": {
+            "temperature": 0.1,
+            "topK": 1,
+            "topP": 1,
+            "presencePenalty": 0,
+            "frequencyPenalty": 0
+          }
+        }
       ],
     "tabAutocompleteModel": {
       "title": "On-prem Granite-code-8b",
