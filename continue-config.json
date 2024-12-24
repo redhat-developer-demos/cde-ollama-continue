@@ -2,7 +2,7 @@
     "models": [
         {
           "title": "Granite-8B-Instruct",
-          "provider": "rhoai",
+          "provider": "openai",
           "model": "granite-3-8b-instruct",
           "apiBase": "https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com:443/v1",
           "apiKey": "******",
