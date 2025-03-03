@@ -50,5 +50,4 @@ events:
   postStart:
     - pullmodel
     - pullautocompletemodel
-    - trustmcp
     - copyconfig
