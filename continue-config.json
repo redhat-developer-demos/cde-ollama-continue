@@ -18,8 +18,8 @@
     {
       "transport": {
         "type": "stdio",
-        "command": "jbang",
-        "args": ["--quiet", "https://github.com/quarkiverse/quarkus-mcp-servers/blob/main/kubernetes/src/main/java/io/quarkus/mcp/servers/kubernetes/MCPServerKubernetes.java"]
+        "command": "npx",
+        "args": ["-y", "kubernetes-mcp-server@latest"]
       }
     }
   ]
