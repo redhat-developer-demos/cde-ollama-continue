@@ -43,7 +43,7 @@ commands:
       label: "Trust Quarkus MCP Servers"
       component: udi
       commandLine: |
-        jbang --quiet version
+        source $HOME/.bashrc && jbang trust add https://github.com/quarkiverse/quarkus-mcp-servers/
       workingDir: ${PROJECT_SOURCE}
   - id: copyconfig
     exec:
@@ -54,3 +54,4 @@ events:
     - pullmodel
     - pullautocompletemodel
     - trust-quarkus-mcp-servers
+    - copyconfig
