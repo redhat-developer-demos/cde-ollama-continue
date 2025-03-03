@@ -38,9 +38,9 @@ commands:
     exec:
       component: ollama
       commandLine: "ollama pull starcoder2:3b"
-  - id: show-cluster-url
+  - id: trust-quarkus-mcp-servers
     exec:
-      label: "3. Show Cluster URL"
+      label: "Trust Quarkus MCP Servers"
       component: udi
       commandLine: |
         jbang --quiet version
@@ -53,3 +53,4 @@ events:
   postStart:
     - pullmodel
     - pullautocompletemodel
+    - trust-quarkus-mcp-servers
