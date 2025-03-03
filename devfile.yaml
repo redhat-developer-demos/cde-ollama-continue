@@ -41,7 +41,7 @@ commands:
   - id: trustmcp
     exec:
       component: udi
-      commandLine: "jbang trust add https://github.com/quarkiverse/quarkus-mcp-servers/"
+      commandLine: "jbang trust add 'https://github.com/quarkiverse/quarkus-mcp-servers/'"
   - id: copyconfig
     exec:
       component: udi
