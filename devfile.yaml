@@ -41,7 +41,7 @@ commands:
   - id: trustmcp
     exec:
       component: udi
-      commandLine: "jbang trust add '*'"
+      commandLine: "jbang version"
   - id: copyconfig
     exec:
       component: udi
@@ -51,4 +51,3 @@ events:
     - pullmodel
     - pullautocompletemodel
     - trustmcp
-
