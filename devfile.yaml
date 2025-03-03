@@ -38,6 +38,10 @@ commands:
     exec:
       component: ollama
       commandLine: "ollama pull starcoder2:3b"
+  - id: trustmcp
+    exec:
+      component: udi
+      commandLine: "jbang trust add https://github.com/quarkiverse/quarkus-mcp-servers/"
   - id: copyconfig
     exec:
       component: udi
@@ -46,4 +50,5 @@ events:
   postStart:
     - pullmodel
     - pullautocompletemodel
+    - trustmcp
     - copyconfig
