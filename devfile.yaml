@@ -51,4 +51,3 @@ events:
     - trustmcp
     - pullmodel
     - pullautocompletemodel
-    - copyconfig
