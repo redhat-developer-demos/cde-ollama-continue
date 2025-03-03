@@ -43,7 +43,7 @@ commands:
       label: "3. Show Cluster URL"
       component: udi
       commandLine: |
-        jbang version
+        jbang --quiet version
       workingDir: ${PROJECT_SOURCE}
   - id: copyconfig
     exec:
@@ -53,4 +53,3 @@ events:
   postStart:
     - pullmodel
     - pullautocompletemodel
-    - show-cluster-url
