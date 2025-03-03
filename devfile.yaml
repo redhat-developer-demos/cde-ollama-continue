@@ -43,7 +43,7 @@ commands:
       label: "3. Show Cluster URL"
       component: udi
       commandLine: |
-        oc whoami --show-console
+        jbang version
       workingDir: ${PROJECT_SOURCE}
   - id: copyconfig
     exec:
