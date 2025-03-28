@@ -3,13 +3,6 @@ metadata:
   generateName: cde-ollama-continue
 attributes:
   controller.devfile.io/storage-type: ephemeral
-projects:
-  - name: cde-ollama-continue
-    git:
-      remotes:
-        origin: 'https://github.com/redhat-developer-demos/cde-ollama-continue'
-      checkoutFrom:
-        revision: main
 components:
 - name: udi
   container:
@@ -40,7 +33,7 @@ commands:
   - id: pullmodel
     exec:
       component: ollama
-      commandLine: "ollama pull llama3:8b"
+      commandLine: "ollama pull llama3.1:8b"
   - id: pullautocompletemodel
     exec:
       component: ollama
@@ -52,5 +45,4 @@ commands:
 events:
   postStart:
     - pullmodel
-    - pullautocompletemodel
     - copyconfig
