@@ -49,10 +49,6 @@ commands:
     exec:
       component: udi
       commandLine: "mkdir /home/user/.continue && cp /projects/cde-ollama-continue/continue-config.json /home/user/.continue/config.json"
-   - id: updateconfig
-    exec:
-      component: udi
-      commandLine: "cp /projects/cde-ollama-continue/continue-config.json /home/user/.continue/config.json"
 events:
   postStart:
     - pullmodel
