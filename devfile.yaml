@@ -45,5 +45,4 @@ commands:
 events:
   postStart:
     - pullmodel
-    - pullautocompletemodel
     - copyconfig
