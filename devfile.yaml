@@ -33,7 +33,7 @@ commands:
   - id: pullmodel
     exec:
       component: ollama
-      commandLine: "ollama pull llama3.1:8b"
+      commandLine: "ollama pull llama3.1:70b"
   - id: pullautocompletemodel
     exec:
       component: ollama
