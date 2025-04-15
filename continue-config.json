@@ -1,16 +1,22 @@
 {
     "models": [
       {
-        "title": "On-prem Llama3-8b",
-        "model": "llama3:8b",
+        "title": "On-prem Llama3.1-8b",
+        "model": "llama3.1:8b",
         "apiBase": "http://localhost:11434",
         "provider": "ollama"
         }    
       ],
-    "tabAutocompleteModel": {
-      "title": "Starcoder2 3b",
-      "provider": "ollama",
-      "model": "starcoder2:3b"
-    },
-    "allowAnonymousTelemetry": false
+    "allowAnonymousTelemetry": false,
+    "experimental": {
+      "modelContextProtocolServers": [
+        {
+          "transport": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y", "kubernetes-mcp-server@latest"]
+          }
+        }
+      ]
+    }
   }
